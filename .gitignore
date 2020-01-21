@@ -1,7 +1,0 @@
-.idea
-.sass-cache
-.DS_Store
-node_modules
-npm-debug.log
-access.log
-cachedResponse.json
