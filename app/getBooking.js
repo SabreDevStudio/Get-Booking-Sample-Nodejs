@@ -20,8 +20,8 @@ function getBooking() {
 		return Promise.resolve(response.data);
 	}).catch((error => {
 		console.log(error);
-		 console.log(`[${error.response.status}] ... [${error.response.statusText}]`);
-		console.log(`[${error.responsee.status}] ... [${error.response.statusText}]`);
+		console.log(`[${error.response.status}] ... [${error.response.statusText}]`);
+		console.log(`[${error.response.status}] ... [${error.response.statusText}]`);
 		console.log(`[${error.response.data.errorCode}] ... [${error.response.data.message}]`);
 		fileHelper.writeData(JSON.stringify(error.response.data), './cachedResponse.json');
 	}));
