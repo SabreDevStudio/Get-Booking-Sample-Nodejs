@@ -20,19 +20,17 @@ You’ll need your [Sabre REST APIs CERT-environment credentials](https://develo
 
 Using the APIs requires entering credentials so that the app can find them. Part of its logic is requesting a token in order to properly call the GetBooking API. Tokens are gained in part from private credentials.
 
-Simply open up the app’s source code and look at the file named [`config.js`](./app/config.js) to find where they’re declared. There are two attributes (`userSecret` and `appId`) where values can be copied-in as hardcoded strings. Alternatively, they can be picked-up from O/S environment variables that you create on your local development machine.
+Simply open up the app’s source code and look at the file named [`config.js`](./app/config.js) to find where they’re declared. There is one attribute (`userSecret` ) where value can be copied-in as hardcoded string. Alternatively, it can be picked-up from O/S environment variables that you create on your local development machine.
 
 ```
 exports.api = {
   apiEndPoint: 'https://api-crt.cert.havail.sabre.com',
-  userSecret: process.env.SWS_API_SECRET || '',
-  appId: process.env.SWS_APP_ID || '',
+  userSecret: process.env.SWS_API_SECRET || ''
 };
 ```
 
 Environment variables are preferred in this sample app because it keeps them hidden and protected. In this case all code is publicly visible in revision control, and that’s not the place for private information.
 
-* `appId` – is your application identifier and [read more about setup](https://developer.sabre.com/guides/travel-agency/content-services-for-lodging)
 * `userSecret` – is a base64-encoded string computed from steps you can [read more about](https://developer.sabre.com/guides/travel-agency/how-to/rest-apis-token-credentials)
 
 #### Request configuration
